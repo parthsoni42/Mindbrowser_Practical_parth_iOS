@@ -37,3 +37,10 @@ extension UITableView {
         }
     }
 }
+
+extension String {
+    
+    func toString() -> String {
+        return self.replacingOccurrences(of: "\"", with: "")
+    }
+}

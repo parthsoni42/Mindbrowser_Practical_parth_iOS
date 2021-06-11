@@ -28,6 +28,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.isModalInPresentation = true
         self.initialConfig()
     }
     
@@ -46,6 +47,7 @@ class HomeVC: UIViewController {
     
     private func onSetUserDetails() {
         
+        self.title = "Welcome, \(self.objUser?.screenName ?? "")"
         self.lblScreenName.text = self.objUser?.screenName
         if let profileUrlIs = URL(string: self.objUser?.profileImage ?? "") {
             self.imgVwProfile.sd_setImage(with: profileUrlIs, completed: nil)
@@ -69,19 +71,19 @@ class HomeVC: UIViewController {
                         var arrFriends = [String]()
                         
                         for obj in arrData {
-                            arrFriends.append(obj.description.replacingOccurrences(of: "\"", with: ""))
+                            arrFriends.append(obj.description.toString())
                         }
                         self.objFriend.arrFollowerIds = arrFriends
                     }
                 }
             }, failure: { error in
-                print(error)
+                print("LOG: \(#function): \(error.localizedDescription)")
             })
             
             self.getTotalUserFollowers()
             
         }, failure: { (errorIs) in
-            print(errorIs)
+            print("LOG: \(#function): \(errorIs.localizedDescription)")
         })
     }
     
@@ -99,13 +101,13 @@ class HomeVC: UIViewController {
                     var arrFollowers = [String]()
                     
                     for obj in arrData {
-                        arrFollowers.append(obj.description.replacingOccurrences(of: "\"", with: ""))
+                        arrFollowers.append(obj.description.toString())
                     }
                     self.objFriend.arrFollowingIds = arrFollowers
                 }
             }
         }, failure: { error in
-            print(error)
+            print("LOG: \(#function): \(error.localizedDescription)")
         })
     }
     

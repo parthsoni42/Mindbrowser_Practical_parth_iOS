@@ -79,10 +79,10 @@
 		5B4EE44D267272980084AB8A /* Parth_iOSPractical */ = {
 			isa = PBXGroup;
 			children = (
+				5B4EE47B267278610084AB8A /* Constant */,
 				5B4EE46E2672744D0084AB8A /* Model */,
 				5B4EE46F2672744D0084AB8A /* View */,
 				5B4EE46D2672744D0084AB8A /* Controller */,
-				5B4EE47B267278610084AB8A /* Constant */,
 				5B4EE44E267272980084AB8A /* AppDelegate.swift */,
 				5B4EE452267272980084AB8A /* ViewController.swift */,
 				5B4EE454267272980084AB8A /* Main.storyboard */,

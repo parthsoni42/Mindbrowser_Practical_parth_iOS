@@ -10,9 +10,6 @@ import TwitterKit
 
 class User {
 
-    var oAuthToken: String = ""
-    var authToken: String = ""
-    var authSecret:String = ""
     var userId: String = ""
     var userName: String = ""
     var screenName: String = ""
@@ -20,9 +17,6 @@ class User {
     var lastName: String = ""
     var email: String = ""
     var profileImage:String = ""
-    
-    var totalFriends:Int = 0
-    var totalFollowers:Int = 0
     
     //MARK:- Twitter SignIn
     func loginWithTwitter(success withResponse: @escaping (User?) -> (), error withError: @escaping (String) -> ()) {
@@ -42,7 +36,6 @@ class User {
                     client.requestEmail { email, error in
                         if (email != nil) {
                             self.email = email!
-                            print("signed in as \(String(describing: session?.userName))");
                         } else {
                             withError(error?.localizedDescription ?? "")
                         }
@@ -53,8 +46,6 @@ class User {
                         
                         if let userIdIs = session?.userID {
                             self.userId = userIdIs
-                            self.authToken = session?.authToken ?? ""
-                            self.authSecret = session?.authTokenSecret ?? ""
                             self.userName = session?.userName ?? ""
                         }
                         if user?.name != nil {
@@ -72,11 +63,10 @@ class User {
                         self.profileImage = user?.profileImageLargeURL ?? ""
                         
                         withResponse(self)
-                        
                     })
                 } else {
                     withError(error?.localizedDescription ?? "")
-                    print("error: \(String(describing: error?.localizedDescription))");
+                    print("LOG: \(#function): \(error?.localizedDescription ?? "")")
                 }
             })
         } else {
