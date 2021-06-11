@@ -1,0 +1,39 @@
+PODS:
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - Swifter (2.5.0)
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
+
+DEPENDENCIES:
+  - SDWebImage
+  - Swifter (from `https://github.com/mattdonnelly/Swifter.git`, tag `2.5.0`)
+  - TwitterKit
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
+    - TwitterCore
+    - TwitterKit
+
+EXTERNAL SOURCES:
+  Swifter:
+    :git: https://github.com/mattdonnelly/Swifter.git
+    :tag: 2.5.0
+
+CHECKOUT OPTIONS:
+  Swifter:
+    :git: https://github.com/mattdonnelly/Swifter.git
+    :tag: 2.5.0
+
+SPEC CHECKSUMS:
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  Swifter: 4c2f8cf320c2f751c10128f841d8e9bd8609d988
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
+
+PODFILE CHECKSUM: 0ddddfb1f9cce452bda0a42c6585e3d19e4d6820
+
+COCOAPODS: 1.10.0

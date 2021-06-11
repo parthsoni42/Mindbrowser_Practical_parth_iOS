@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Parth_iOSPractical/Pods-Parth_iOSPractical-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework
+${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework
+${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework
