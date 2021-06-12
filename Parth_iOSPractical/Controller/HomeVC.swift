@@ -10,7 +10,7 @@ import Swifter
 import SDWebImage
 
 class HomeVC: UIViewController {
-
+    
     //MARK:- IBOutlets
     @IBOutlet weak var imgVwProfile: UIImageView!
     @IBOutlet weak var lblScreenName: UILabel!
@@ -27,7 +27,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.isModalInPresentation = true
         self.initialConfig()
     }
@@ -64,7 +64,7 @@ class HomeVC: UIViewController {
                 
                 DispatchQueue.main.async {
                     if let arrData = responseJson.array {
-            
+                        
                         self.lblTotalFriends.text = "Total Friends: \(arrData.count)"
                         self.objFriend.totalFollowers = arrData.count
                         
@@ -88,7 +88,7 @@ class HomeVC: UIViewController {
     }
     
     private func getTotalUserFollowers(nextCursorIs: String = "") {
-
+        
         //Following
         self.swiffer?.getUserFollowingIDs(for: .id(self.objUser?.userId ?? ""), success: { responseJson, prev, next in
             
@@ -113,7 +113,7 @@ class HomeVC: UIViewController {
     
     //MARK:- IBActions
     @IBAction func btnFollowers_click(_ sender: Any) {
-
+        
         guard let objFriendVC = self.storyboard?.instantiateViewController(withIdentifier: "FriendsVC") as? FriendsVC else {
             return
         }
@@ -132,22 +132,10 @@ class HomeVC: UIViewController {
         objFriendVC.objFriend = self.objFriend
         self.navigationCon?.pushViewController(objFriendVC, animated: true)
     }
-
+    
     @IBAction func btnLogout_click(_ sender: Any) {
         
         User.logOutUser()
         self.dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

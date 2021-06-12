@@ -1,7 +1,6 @@
 //
 //  User.swift
 //  Parth_iOSPractical
-//
 //  Created by Parth on 10/06/21.
 //
 

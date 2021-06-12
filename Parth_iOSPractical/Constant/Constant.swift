@@ -15,7 +15,6 @@ class Constant {
 }
 
 /*
-
  Access token generation source:-
  https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens
  */
