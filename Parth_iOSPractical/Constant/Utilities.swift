@@ -43,4 +43,8 @@ extension String {
     func toString() -> String {
         return self.replacingOccurrences(of: "\"", with: "")
     }
+    
+    func getHDImageUrl() -> String {
+        return self.replacingOccurrences(of: "_normal", with: "_bigger")
+    }
 }

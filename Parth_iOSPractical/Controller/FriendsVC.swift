@@ -72,7 +72,7 @@ class FriendsVC: UIViewController {
         
         let obj = Friends.init()
         obj.strName = response["name"].description.toString()
-        obj.strProfileImage = response["profile_image_url_https"].description.toString()
+        obj.strProfileImage = response["profile_image_url_https"].description.toString().getHDImageUrl()
         
         self.arrUsers.append(obj)
         
